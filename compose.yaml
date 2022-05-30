@@ -1,0 +1,17 @@
+services:
+  # LocalStack
+  # https://docs.localstack.cloud/localstack/configuration/
+  localstack:
+    container_name: tslambda-container-localstack
+    image: localstack/localstack:latest
+    environment:
+      SERVICES: apigateway,lambda
+      EDGE_BIND_HOST: 0.0.0.0
+      EDGE_PORT: 4566
+      INIT_SCRIPTS_PATH: /init/scripts
+    ports:
+      - 4566:4566
+      - 4567:4567
+    volumes:
+      - ./.devcontainer/localstack/init:/init:ro
+      - .:/app:cached

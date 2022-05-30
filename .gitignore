@@ -1,0 +1,17 @@
+/.idea/
+/.vscode/
+/dist/
+/node_modules/
+/vendor/
+
+*.zip
+
+*.d.ts
+*.map
+*.log
+*.swp
+*.lock
+
+._*
+.DS_Store
+Thumbs.db
